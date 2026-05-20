@@ -1,0 +1,14 @@
+Threat Dragon Docker Runtime Check
+
+Result:
+- Docker installed successfully.
+- owasp/threat-dragon:stable image was pulled.
+- Container exited during startup.
+- Logs showed missing .env/environment configuration.
+- owasp/threat-dragon:latest does not exist.
+
+Decision:
+- Continue lab by producing threat modeling artifacts manually.
+- Document runtime issue as troubleshooting evidence.
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES

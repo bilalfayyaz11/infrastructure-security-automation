@@ -1,0 +1,13 @@
+flowchart LR
+    User[User / External Actor] --> Web[Web Application]
+    Web --> Auth[Authentication Server]
+    Web --> API[Backend API]
+    Web --> DB[(Database)]
+
+    InternetBoundary[[Internet Boundary]]
+    AppBoundary[[Application Boundary]]
+    DataBoundary[[Database Trust Boundary]]
+
+    User -. crosses .-> InternetBoundary
+    Web -. crosses .-> AppBoundary
+    DB -. protected by .-> DataBoundary
