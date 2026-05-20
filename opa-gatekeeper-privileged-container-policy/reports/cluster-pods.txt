@@ -1,0 +1,13 @@
+NAMESPACE           NAME                                             READY   STATUS    RESTARTS        AGE
+default             compliant-pod                                    1/1     Running   0               60s
+gatekeeper-system   gatekeeper-audit-67c7f58d8f-dfrbm                1/1     Running   2 (2m36s ago)   2m42s
+gatekeeper-system   gatekeeper-controller-manager-7c65b49cc4-llqkl   1/1     Running   0               2m42s
+gatekeeper-system   gatekeeper-controller-manager-7c65b49cc4-lrdmp   1/1     Running   0               2m42s
+gatekeeper-system   gatekeeper-controller-manager-7c65b49cc4-mcdqm   1/1     Running   0               2m42s
+kube-system         coredns-7d764666f9-r7t8m                         1/1     Running   0               3m27s
+kube-system         etcd-minikube                                    1/1     Running   0               3m33s
+kube-system         kube-apiserver-minikube                          1/1     Running   0               3m32s
+kube-system         kube-controller-manager-minikube                 1/1     Running   0               3m32s
+kube-system         kube-proxy-xrrzm                                 1/1     Running   0               3m27s
+kube-system         kube-scheduler-minikube                          1/1     Running   0               3m32s
+kube-system         storage-provisioner                              1/1     Running   1 (2m57s ago)   3m30s

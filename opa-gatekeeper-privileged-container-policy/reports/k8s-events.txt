@@ -1,0 +1,14 @@
+LAST SEEN   TYPE     REASON                    OBJECT              MESSAGE
+3m25s       Normal   Starting                  node/minikube       
+3m33s       Normal   Starting                  node/minikube       Starting kubelet.
+3m33s       Normal   NodeAllocatableEnforced   node/minikube       Updated Node Allocatable limit across pods
+3m32s       Normal   NodeHasSufficientPID      node/minikube       Node minikube status is now: NodeHasSufficientPID
+3m32s       Normal   NodeHasSufficientMemory   node/minikube       Node minikube status is now: NodeHasSufficientMemory
+3m32s       Normal   NodeHasNoDiskPressure     node/minikube       Node minikube status is now: NodeHasNoDiskPressure
+3m29s       Normal   NodeReady                 node/minikube       Node minikube status is now: NodeReady
+3m29s       Normal   RegisteredNode            node/minikube       Node minikube event: Registered Node minikube in Controller
+60s         Normal   Scheduled                 pod/compliant-pod   Successfully assigned default/compliant-pod to minikube
+59s         Normal   Pulling                   pod/compliant-pod   Pulling image "nginx:stable"
+54s         Normal   Started                   pod/compliant-pod   Container started
+54s         Normal   Created                   pod/compliant-pod   Container created
+54s         Normal   Pulled                    pod/compliant-pod   Successfully pulled image "nginx:stable" in 4.93s (4.931s including waiting). Image size: 169391126 bytes.
