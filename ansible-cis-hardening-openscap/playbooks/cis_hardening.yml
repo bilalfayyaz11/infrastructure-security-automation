@@ -1,0 +1,68 @@
+---
+- name: Harden Ubuntu system based on CIS recommendations
+  hosts: servers
+  become: true
+
+  tasks:
+
+    - name: Disable IPv6
+      sysctl:
+        name: net.ipv6.conf.all.disable_ipv6
+        value: '1'
+        state: present
+        reload: true
+
+    - name: Stop telnet service if installed
+      service:
+        name: telnet
+        state: stopped
+        enabled: false
+      ignore_errors: true
+
+    - name: Disable root SSH login
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin no'
+        backup: true
+
+    - name: Disable password authentication
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+        backup: true
+
+    - name: Validate SSH configuration
+      command: sshd -t
+      register: ssh_validation
+      changed_when: false
+
+    - name: Restart SSH service safely
+      service:
+        name: ssh
+        state: restarted
+      when: ssh_validation.rc == 0
+
+    - name: Enable UFW
+      ufw:
+        state: enabled
+        policy: deny
+
+    - name: Allow SSH through firewall
+      ufw:
+        rule: allow
+        port: '22'
+        proto: tcp
+
+    - name: Install auditd
+      apt:
+        name: auditd
+        state: present
+        update_cache: true
+
+    - name: Enable auditd
+      service:
+        name: auditd
+        enabled: true
+        state: started
