@@ -1,0 +1,12 @@
+NAMESPACE     NAME                                READY   STATUS    RESTARTS        AGE     IP             NODE       NOMINATED NODE   READINESS GATES
+kube-system   coredns-7d764666f9-fw2rp            1/1     Running   0               9m25s   10.244.0.2     minikube   <none>           <none>
+kube-system   etcd-minikube                       1/1     Running   0               9m30s   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-apiserver-minikube             1/1     Running   0               9m31s   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-controller-manager-minikube    1/1     Running   0               9m30s   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-proxy-mhqv6                    1/1     Running   0               9m25s   192.168.49.2   minikube   <none>           <none>
+kube-system   kube-scheduler-minikube             1/1     Running   0               9m30s   192.168.49.2   minikube   <none>           <none>
+kube-system   storage-provisioner                 1/1     Running   1 (8m53s ago)   9m27s   192.168.49.2   minikube   <none>           <none>
+secure-apps   allowed-client                      1/1     Running   0               92s     10.244.0.6     minikube   <none>           <none>
+secure-apps   blocked-client                      1/1     Running   0               92s     10.244.0.7     minikube   <none>           <none>
+secure-apps   secure-nginx-78d5f7df6d-6rvlw       1/1     Running   0               4m32s   10.244.0.4     minikube   <none>           <none>
+secure-apps   secure-web-nginx-65d758d4b4-vsjd6   1/1     Running   0               2m28s   10.244.0.5     minikube   <none>           <none>

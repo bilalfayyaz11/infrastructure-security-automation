@@ -1,0 +1,2 @@
+NAME      	NAMESPACE  	REVISION	UPDATED                                	STATUS  	CHART       	APP VERSION
+secure-web	secure-apps	1       	2026-05-20 02:06:39.908081242 +0000 UTC	deployed	nginx-24.0.0	1.31.0     

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged-test
+  namespace: secure-apps
+spec:
+  containers:
+    - name: test
+      image: busybox:latest
+      command: ["sleep", "3600"]
+      securityContext:
+        privileged: true

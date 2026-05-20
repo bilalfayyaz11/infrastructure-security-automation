@@ -1,0 +1,2 @@
+NAME          STATUS   AGE     LABELS
+secure-apps   Active   6m47s   kubernetes.io/metadata.name=secure-apps,pod-security.kubernetes.io/audit=restricted,pod-security.kubernetes.io/enforce=restricted,pod-security.kubernetes.io/warn=restricted

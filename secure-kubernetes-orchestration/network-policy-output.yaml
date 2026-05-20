@@ -1,0 +1,65 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"secure-nginx-ingress-only","namespace":"secure-apps"},"spec":{"ingress":[{"from":[{"podSelector":{"matchLabels":{"access":"allowed"}}}],"ports":[{"port":8080,"protocol":"TCP"}]}],"podSelector":{"matchLabels":{"app":"secure-nginx"}},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2026-05-20T02:07:08Z"
+    generation: 1
+    name: secure-nginx-ingress-only
+    namespace: secure-apps
+    resourceVersion: "908"
+    uid: d828d8c6-d482-45c7-8dab-bd0b0d24f029
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            access: allowed
+      ports:
+      - port: 8080
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: secure-nginx
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: secure-web
+      meta.helm.sh/release-namespace: secure-apps
+    creationTimestamp: "2026-05-20T02:06:40Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/instance: secure-web
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: nginx
+      app.kubernetes.io/version: 1.31.0
+      helm.sh/chart: nginx-24.0.0
+    name: secure-web-nginx
+    namespace: secure-apps
+    resourceVersion: "840"
+    uid: ca985ae6-7079-4e1d-a068-9eafdf3cfbae
+  spec:
+    egress:
+    - {}
+    ingress:
+    - ports:
+      - port: 8080
+        protocol: TCP
+      - port: 8443
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app.kubernetes.io/instance: secure-web
+        app.kubernetes.io/name: nginx
+    policyTypes:
+    - Ingress
+    - Egress
+kind: List
+metadata:
+  resourceVersion: ""
